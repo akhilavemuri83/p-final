@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>custumer churn predictio</title>
+    </head>
+    <body>
+        <form action="/predict" method="POST">
+		<center>
+		<h1> <i><u>customer churn predict</u></i></h1>
+            <label for="gender">Gender  :</label>
+            <input type="radio" name="gender" value="Male" required>Male
+            <input type="radio" name="gender" value="Female">Female
+            <br><br>
+            <label for="SeniorCitizen"> SeniorCitizen</label>
+            <select name="SeniorCitizen">
+				<option>customer is seniorcitize </option>
+				<option value=1>1</option>
+				<option value=0>0</option>
+			</select>			
+            <br><br>
+            <label for="Partner">Partner  :</label>
+            <input type="radio" name="Partner" value="Yes" required>Yes
+            <input type="radio" name="Partner" value="No">No
+            <br><br>
+            <label for="Dependents">Dependents  :</label>
+            <input type="radio" name="Dependents" value="Yes" required>Yes
+            <input type="radio" name="Dependents" value="No">No
+            <br><br>
+            <label for="tenure">tenure  :</label>
+            <input type="number" min=1 max=130 name="tenure"autofocus placeholder="enter the tenure months" required >
+            <br><br>
+            <label for="PhoneService">PhoneService  :</label>
+            <input type="radio" name="PhoneService" value="Yes"required>Yes
+            <input type="radio" name="PhoneService" value="No" >No
+            <br><br>
+            <label for="MultipleLines">MultipleLines  :</label>
+            <select name="MultipleLines" required>
+                <option>select the value</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="No phone service">No phone service</option>
+            </select>
+            <br><br>
+            <label for="InternetService">InternetService  :</label>
+            <select name="InternetService" autofocus required>
+                <option></option>
+                <option value="DSL">DSL</option>
+                <option value="Fiber optic">Fiber optic</option>
+                <option value="No">No</option>
+            </select>
+            <br><br>
+            <label for="OnlineSecurity">OnlineSecurity  :</label>
+            <input type="radio" name="OnlineSecurity" value="Yes" required>Yes
+            <input type="radio" name="OnlineSecurity" value="No">No
+            <input type="radio" name="OnlineSecurity" value="No internet service" required>No internet service
+            <br><br>
+            <label for="OnlineBackup">OnlineBackup  :</label>
+            <input type="radio" name="OnlineBackup" value="Yes"required>Yes
+            <input type="radio" name="OnlineBackup"value="No">No
+            <input type="radio" name="OnlineBackup" value="No internet service">No internet service
+            <br><br>
+            <label for="DeviceProtection ">DeviceProtection  :</label>
+            <input type="radio" name="DeviceProtection"value="Yes" required>Yes
+            <input type="radio" name="DeviceProtection"value="No">No
+            <input type="radio" name="DeviceProtection"value="No internet service">No internet service
+            <br><br>
+            <label for="TechSupport">TechSupport  :</label>
+            <input type="radio" name="TechSupport" value="Yes" required>Yes
+            <input type="radio" name="TechSupport"value="No">No
+            <input type="radio" name="TechSupport"value="No internet service">No internet service
+            <br><br>
+            <label for="StreamingTV">StreamingTV  :</label>
+            <input type="radio" name="StreamingTV"value="Yes"required>Yes
+            <input type="radio" name="StreamingTV"value="No">No
+            <input type="radio" name="StreamingTV"value="No internet service">No internet service
+            <br><br>
+            <label for="StreamingMovies">StreamingMovies  :</label>
+            <input type="radio" name="StreamingMovies" value="Yes" required>Yes
+            <input type="radio" name="StreamingMovies" value="No">No
+            <input type="radio" name="StreamingMovies" value="No internet service">No internet service
+            <br><br>
+            <label for="Contract">Contract  :</label>
+            <select name="Contract" autofocus required>
+                <option >select option</option>
+                <option value="Month-to-month">Month-to-month</option>
+                <option value="One year">One year</option>
+                <option value="Two year">Two year</option>
+            </select>
+            <br><br>
+            <label for="PaperlessBilling">PaperlessBilling  :</label>
+            <select name="PaperlessBilling" autofocus required >
+                <option value="">select option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <br><br>
+            <label for="PaymentMethod">PaymentMethod  :</label>
+            <select name="PaymentMethod" autofocus required>
+                <option>select the method</option>
+                <option value="Electronic check">Electronic check</option>
+                <option value="Mailed check">Mailed check</option>
+                <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                <option value="Credit card (automatic)">Credit card (automatic)</option>
+            </select>
+            <br><br>
+            <label for="MonthlyCharges">MonthlyCharges  :</label>
+            <input type="number" min=10 name="MonthlyCharges" required/>
+            <br><br>
+            <label for="TotalCharges">TotalCharges  :</label>
+            <input type="number"min=100 name="TotalCharges" required/>
+            <br><br>
+            <input type="submit" value="prediction">
+        </form>
+        {% if prediction %}
+        <h2> customer churn is ---->{{prediction}}</h2>
+        {% endif%}
+		</center>
+    </body>
+</html>
+               
+        
+        
